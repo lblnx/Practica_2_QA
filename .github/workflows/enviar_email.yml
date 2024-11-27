@@ -4,8 +4,7 @@ name: Send Email on Push
 on:
   push:
     branches:
-      - '**'  # Esto ejecutará la acción en cualquier rama
-
+      - '**'  
 jobs:
   send-email:
     runs-on: ubuntu-latest
@@ -17,12 +16,12 @@ jobs:
     - name: Send email notification
       uses: dawidd6/action-send-mail@v3
       with:
-        server_address: smtp.gmail.com  # Cambiado de 'host' a 'server_address'
-        server_port: 587  # Cambiado de 'port' a 'server_port'
+        server_address: smtp.gmail.com  
+        server_port: 587  
         username: ${{ secrets.EMAIL_USERNAME }}
         password: ${{ secrets.EMAIL_PASSWORD }}
         to: 'pabloquint.2002@gmail.com'
         from: ${{ secrets.EMAIL_USERNAME }}
         subject: 'Cambios subidos a rama ${{ github.ref }}'
-        body: 'Se han subido cambios a la rama ${{ github.ref }}.'  # Texto del correo
-        html_body: '<p>Se han subido cambios a la rama ${{ github.ref }}.</p>'  # Contenido HTML
+        body: 'Se han subido cambios a la rama ${{ github.ref }}.'  
+        html_body: '<p>Se han subido cambios a la rama ${{ github.ref }}.</p>'  
