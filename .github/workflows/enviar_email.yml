@@ -19,10 +19,10 @@ jobs:
         # Configura los parámetros de correo electrónico
         host: smtp.gmail.com  
         port: 587
-        username: ${{ pabloquint.2002@gmail.com }}  # Nombre de usuario del correo
-        password: ${{ Quintero_134 }}  # Contraseña del correo o token
+        username: ${{ secrets.EMAIL_USERNAME }}  # Nombre de usuario del correo
+        password: ${{ secrets.EMAIL_PASSWORD }}  # Contraseña del correo o token
         to: 'yakiichan99@hotmail.com.com'
-        from: ${{ pabloquint.2002@gmail.com }}
+        from: ${{ secrets.EMAIL_USERNAME  }}
         subject: 'Cambios subidos a rama ${{ github.ref }}'  
         body: |
           Se han subido cambios a la rama ${{ github.ref }}. 
