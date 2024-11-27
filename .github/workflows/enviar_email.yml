@@ -1,0 +1,31 @@
+name: Send Email on Push
+
+on:
+  push:
+    branches:
+      - '**'  # Esto ejecutará la acción en cualquier rama
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    
+    - name: Send email notification
+      uses: dawidd6/action-send-mail@v3
+      with:
+        # Configura los parámetros de correo electrónico
+        host: smtp.gmail.com  
+        port: 587
+        username: ${{ pabloquint.2002@gmail.com }}  # Nombre de usuario del correo
+        password: ${{ Quintero_134 }}  # Contraseña del correo o token
+        to: 'yakiichan99@hotmail.com.com'
+        from: ${{ pabloquint.2002@gmail.com }}
+        subject: 'Cambios subidos a rama ${{ github.ref }}'  
+        body: |
+          Se han subido cambios a la rama ${{ github.ref }}. 
+
+        
+        html: true
