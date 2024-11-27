@@ -17,11 +17,11 @@ jobs:
     - name: Send email notification
       uses: dawidd6/action-send-mail@v3
       with:
-        server_address: smtp.gmail.com  # Cambiado de 'host' a 'server_address'
+        server_address: smtp.live.com  # Cambiado de 'host' a 'server_address'
         server_port: 587  # Cambiado de 'port' a 'server_port'
         username: ${{ secrets.EMAIL_USERNAME }}
         password: ${{ secrets.EMAIL_PASSWORD }}
-        to: 'yakiichan99@hotmail.com'
+        to: 'pabloquint.2002@gmail.com'
         from: ${{ secrets.EMAIL_USERNAME }}
         subject: 'Cambios subidos a rama ${{ github.ref }}'
         body: 'Se han subido cambios a la rama ${{ github.ref }}.'  # Texto del correo
