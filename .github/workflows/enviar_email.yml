@@ -1,3 +1,4 @@
+
 name: Send Email on Push
 
 on:
@@ -16,16 +17,12 @@ jobs:
     - name: Send email notification
       uses: dawidd6/action-send-mail@v3
       with:
-        # Configura los parámetros de correo electrónico
-        host: smtp.gmail.com  
-        port: 587
-        username: ${{ secrets.EMAIL_USERNAME }}  # Nombre de usuario del correo
-        password: ${{ secrets.EMAIL_PASSWORD }}  # Contraseña del correo o token
+        server_address: smtp.gmail.com  # Cambiado de 'host' a 'server_address'
+        server_port: 587  # Cambiado de 'port' a 'server_port'
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
         to: 'yakiichan99@hotmail.com'
-        from: ${{ secrets.EMAIL_USERNAME  }}
-        subject: 'Cambios subidos a rama ${{ github.ref }}'  
-        body: |
-          Se han subido cambios a la rama ${{ github.ref }}. 
-
-        
-        html: true
+        from: ${{ secrets.EMAIL_USERNAME }}
+        subject: 'Cambios subidos a rama ${{ github.ref }}'
+        body: 'Se han subido cambios a la rama ${{ github.ref }}.'  # Texto del correo
+        html_body: '<p>Se han subido cambios a la rama ${{ github.ref }}.</p>'  # Contenido HTML
