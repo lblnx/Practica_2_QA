@@ -21,7 +21,7 @@ jobs:
         server_port: 587  # Cambiado de 'port' a 'server_port'
         username: ${{ secrets.EMAIL_USERNAME }}
         password: ${{ secrets.EMAIL_PASSWORD }}
-        to: 'yakiichan99@hotmail.com'
+        to: 'pabloquint.2002@gmail.com'
         from: ${{ secrets.EMAIL_USERNAME }}
         subject: 'Cambios subidos a rama ${{ github.ref }}'
         body: 'Se han subido cambios a la rama ${{ github.ref }}.'  # Texto del correo
