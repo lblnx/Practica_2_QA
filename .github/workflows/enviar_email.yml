@@ -21,7 +21,7 @@ jobs:
         port: 587
         username: ${{ secrets.EMAIL_USERNAME }}  # Nombre de usuario del correo
         password: ${{ secrets.EMAIL_PASSWORD }}  # Contraseña del correo o token
-        to: 'yakiichan99@hotmail.com.com'
+        to: 'yakiichan99@hotmail.com'
         from: ${{ secrets.EMAIL_USERNAME  }}
         subject: 'Cambios subidos a rama ${{ github.ref }}'  
         body: |
